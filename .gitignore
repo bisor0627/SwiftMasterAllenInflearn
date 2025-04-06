@@ -52,3 +52,22 @@ xcuserdata/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,xcode
+
+
+# Ignore issue metadata
+issues.json
+
+# Ignore build artifacts
+**/build/
+# Ignore test results
+**/test-results/
+# Ignore coverage reports
+**/coverage/
+
+# Ignore IDE files
+**/.idea/
+
+# Ignore node_modules
+**/node_modules/
+**/package-lock.json
+**/package.json

@@ -1,6 +1,8 @@
-# SwiftMasterAllenInflearn
+# 🎓 SwiftMasterAllenInflearn
 
 > UIKit 기반 iOS 앱 개발 강의 (by Allen) 실습 & 정리 레포지토리 🎯
+
+![status](https://img.shields.io/badge/Goal-100%25-green) ![progress](https://img.shields.io/badge/Currently-Learning-blue)
 
 ## 📌 목적
 - UIKit 기반 앱 개발 능력 향상
@@ -8,6 +10,33 @@
 - iOS 앱 설계 패턴 학습 및 실습
 - 깃허브 잔디와 함께 성장 일지 작성 🌱
 
+## 🗓️ 학습 기간
+
+- 시작일: 2025-04-06
+- 종료 목표일: 2025-05-19 (총 6주 / 평일 3시간 기준)
+
+## 🧠 학습 방식
+
+- CBL 방식 기반 (Challenge Based Learning)
+- 실습 먼저 → 문법 복습 → 이론 확인 → 정리 + 회고 순
+- 각 프로젝트별 README에 실습 + 궁금한 점 기록
+- 커밋 메시지는 Why / How / Tags 기반의 명확한 형식으로 정리
+
+| 앱 이름 | 학습일 | 상태 | 링크 |
+|---------|--------|------|------|
+| MyFirstApp | Day 01 | 🟡 진행중 | [바로가기](./Projects/MyFirstApp) |
+| DiceGameApp | Day 01 | ⬜ 예정 | - |
+| UpDownApp | Day 02 | ⬜ 예정 | - |
+
+## 📚 전체 강의 커리큘럼 요약
+
+총 255강 / 80시간 33분 ⏰
+
+- **이론 파트**: Swift 기초 문법, ARC, 클로저, 제네릭, 에러처리, 함수형 프로그래밍, OOP 등
+- **실습 파트**: 5개의 기초 앱 + 10개의 실전 앱 제작
+- **활용 자료**: 코드 자료, CS 101 부록 등
+
+> 📎 [전체 커리큘럼 상세 보기](./Curriculum.md)
 
 ## 📆 학습 계획 및 일정표 (30일 완주 목표 / 주 5일 × 6주 구성) ✅
 > CBL(Case-Based Learning) 방식으로, 앱을 만들며 필요한 이론을 역추적하며 학습합니다.
@@ -15,7 +44,7 @@
 ### ✅ 주간 계획
 
 #### Week 1: 앱 실습 진입 & Swift 기초 다지기
-- [ ] Day 01: DiceGameApp 시작 (66\~69강), 함수 기초 (28\~29강)
+- [ ] Day 01: MyFistApp,DiceGameApp 시작 (65\~69강), 함수 기초 (28\~29강)
 - [ ] Day 02: 조건문/switch (15\~17강), UpDown CLI 앱 (77\~78강)
 - [ ] Day 03: UpDownApp 시작 (79\~80강), 반복문 복습 (23\~26강)
 - [ ] Day 04: UpDownApp 논리 구성 (81\~83강), guard문 (39강)
@@ -57,22 +86,6 @@
 - [ ] Day 30: 전체 회고 + README 정리
 
 
-## 🗂️ 디렉토리 구조
-```
-SwiftMasterAllenInflearn/
-├── README.md ← 최상단 개요 및 계획
-├── analysis_options.yaml
-├── LICENSE
-└── Projects/              ← 실습별 폴더 (ex. DiceGameApp 등)
-    ├── [01]_DiceGameApp/
-    │   ├── DiceGame.xcodeproj
-    │   ├── Sources/
-    │   └── README.md
-    ├── [02]_UpDownApp/
-    └── ...
-```
-
-
 ## 📘 강의 내용 정리 (작성 중)
 - [x] 
 - [ ]
@@ -83,3 +96,24 @@ SwiftMasterAllenInflearn/
 - [ ] guard문이 많이 쓰이는 이유?
 - [ ] SwiftUI와 UIKit의 차이점은 어디까지?
 
+## 📂 내부 구조
+
+```bash
+SwiftMasterAllenInflearn            
+├── Projects/                      # 각 실습 프로젝트 폴더
+│   ├── DiceGameApp/              
+│   ├── UpDownApp/                
+│   └── MyFirstApp/               
+├── Curriculum.md
+├── README.md                     
+└── .gitignore
+```
+
+## 🧾 커밋 메시지 포맷 예시
+
+```bash
+✨ feat(DiceGame): 주사위 앱 구현
+- Why: UIKit 학습 및 이벤트 연결 실습을 위해
+- How: UIButton + IBAction으로 주사위 이미지 변경 구현
+- Tags: #UIKit #Random #AutoLayout
+```

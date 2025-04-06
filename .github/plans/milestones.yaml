@@ -1,0 +1,23 @@
+- title: Week 1 – 앱 실습 & Swift 기초
+  description: "Day 01∼05: DiceGame, UpDownApp, 함수/조건문/옵셔널"
+  due: 2025-04-11
+
+- title: Week 2 – ARC & 클로저 정복
+  description: "Day 06∼10: ARC 구조, 메모리, 클로저 최적화"
+  due: 2025-04-16
+
+- title: Week 3 – 앱 리팩토링 & CS 복습
+  description: "Day 11∼15: 열거형, 리팩토링, CS101, 문자열"
+  due: 2025-04-21
+
+- title: Week 4 – 클래스 & 네트워킹
+  description: "Day 16∼20: 클래스, 네트워킹, Result 타입"
+  due: 2025-04-28
+
+- title: Week 5 – 제네릭 & 프로토콜
+  description: "Day 21∼25: 타입캐스팅, 프로토콜, 메서드 디스패치"
+  due: 2025-05-05
+
+- title: Week 6 – 동시성 & 포트폴리오
+  description: "Day 26∼30: GCD, 동시성 문제, 고차함수"
+  due: 2025-05-12

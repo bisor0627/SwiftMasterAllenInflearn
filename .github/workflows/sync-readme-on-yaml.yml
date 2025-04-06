@@ -1,0 +1,27 @@
+name: Sync README from plans
+
+on:
+  push:
+    paths:
+      - ".github/plans/**/*.yaml"
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm ci
+      - name: Update README with plan
+        run: node .github/scripts/update-readme-from-plans.js
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "📝 README 업데이트 (plans/*.yaml 기반)" || echo "No changes"
+          git push
