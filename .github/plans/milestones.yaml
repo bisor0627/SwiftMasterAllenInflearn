@@ -1,23 +1,133 @@
-- title: Week 1 – 앱 실습 & Swift 기초
-  description: "Day 01∼05: DiceGame, UpDownApp, 함수/조건문/옵셔널"
-  due: 2025-04-11
-
-- title: Week 2 – ARC & 클로저 정복
-  description: "Day 06∼10: ARC 구조, 메모리, 클로저 최적화"
-  due: 2025-04-16
-
-- title: Week 3 – 앱 리팩토링 & CS 복습
-  description: "Day 11∼15: 열거형, 리팩토링, CS101, 문자열"
-  due: 2025-04-21
-
-- title: Week 4 – 클래스 & 네트워킹
-  description: "Day 16∼20: 클래스, 네트워킹, Result 타입"
-  due: 2025-04-28
-
-- title: Week 5 – 제네릭 & 프로토콜
-  description: "Day 21∼25: 타입캐스팅, 프로토콜, 메서드 디스패치"
-  due: 2025-05-05
-
-- title: Week 6 – 동시성 & 포트폴리오
-  description: "Day 26∼30: GCD, 동시성 문제, 고차함수"
-  due: 2025-05-12
+- number: 1
+  title: Week 1 – 앱 실습 & Swift 기초
+  description: 'Day 01∼05: MyFirstApp, DiceGame, UpDownApp, 함수/조건문/옵셔널'
+  due: '2025-04-11'
+  days:
+    - day: 1
+      issue_title: 'Day 05: 튜플/삼항연산자/옵셔널 기본'
+      body: 19∼22강, 43강
+    - day: 2
+      issue_title: 'Day 04: UpDownApp 논리 구성, guard문'
+      body: 81∼83강, 39강
+- number: 2
+  title: Week 2 – ARC & 클로저 정복
+  description: 'Day 06∼10: ARC 구조, 메모리, 클로저 최적화'
+  due: '2025-04-16'
+  days:
+    - day: 1
+      issue_title: 'Day 10: 클로저의 메모리 구조, escaping'
+      body: 147∼149강
+    - day: 2
+      issue_title: 'Day 09: 클로저 개념/형태/문법'
+      body: 142∼146강
+    - day: 3
+      issue_title: 'Day 08: 함수의 메모리 구조 & inout'
+      body: 35∼38강
+    - day: 4
+      issue_title: 'Day 07: ARC 심화 + 메모리 구조'
+      body: 157∼162강, 106강
+    - day: 5
+      issue_title: 'Day 06: ARC 개념, 클래스/구조체 기초'
+      body: 155∼156강, 85∼86강
+- number: 3
+  title: Week 3 – 앱 리팩토링 & CS 복습
+  description: 'Day 11∼15: 열거형, 리팩토링, CS101, 문자열'
+  due: '2025-04-21'
+  days:
+    - day: 1
+      issue_title: 'Day 12: 앱 리팩토링 및 정리'
+      body: Dice, UpDown
+    - day: 2
+      issue_title: 'Day 15: 전체 복습 + 궁금한 점 정리'
+      body: ''
+    - day: 3
+      issue_title: 'Day 14: 문자열 인덱싱/삽입/정규식'
+      body: 199∼205강
+    - day: 4
+      issue_title: 'Day 13: CS101 스킵 훑기, 문자열 기본'
+      body: 1∼4강, 195∼198강
+    - day: 5
+      issue_title: 'Day 12: 앱 리팩토링 및 정리 (Dice, UpDown)'
+      body: 리팩토링
+    - day: 6
+      issue_title: 'Day 11: 열거형 + 옵셔널 패턴 정리'
+      body: 53∼59강
+- number: 4
+  title: Week 4 – 클래스 & 네트워킹
+  description: 'Day 16∼20: 클래스, 네트워킹, Result 타입'
+  due: '2025-04-28'
+  days:
+    - day: 1
+      issue_title: 'Day 20: Result 타입, 에러처리'
+      body: 186∼187강, 163∼166강
+    - day: 2
+      issue_title: 'Day 19: 네트워킹 구조 이해 및 실습'
+      body: 167∼172강
+    - day: 3
+      issue_title: 'Day 18: 클래스 상속 및 초기화 흐름'
+      body: 104∼114강
+    - day: 4
+      issue_title: 'Day 17: 타입 메서드, 서브스크립트, 싱글톤'
+      body: 99∼103강
+    - day: 5
+      issue_title: 'Day 16: 속성과 메서드'
+      body: 90∼98강
+- number: 5
+  title: Week 5 – 제네릭 & 프로토콜
+  description: 'Day 21∼25: 타입캐스팅, 프로토콜, 메서드 디스패치'
+  due: '2025-05-05'
+  days:
+    - day: 1
+      issue_title: 'Day 25: 제네릭 개념 + 프로토콜 확장'
+      body: 183∼185강
+    - day: 2
+      issue_title: 'Day 24: 메서드 디스패치'
+      body: 136∼137강
+    - day: 3
+      issue_title: 'Day 23: 프로토콜 & 프로토콜지향 프로그래밍'
+      body: 125∼135강
+    - day: 4
+      issue_title: 'Day 22: 확장/중첩타입/Self'
+      body: 119∼124강, 138∼141강
+    - day: 5
+      issue_title: 'Day 21: 타입캐스팅'
+      body: 115∼118강
+- number: 6
+  title: Week 6 – 동시성 & 포트폴리오
+  description: 'Day 26∼30: GCD, 동시성 문제, 고차함수'
+  due: '2025-05-12'
+  days:
+    - day: 1
+      issue_title: 'Day 30: 전체 회고 + README 정리'
+      body: ''
+    - day: 2
+      issue_title: 'Day 29: 고급 연산자 & 메모리 안전'
+      body: 207∼213강
+    - day: 3
+      issue_title: 'Day 28: 고차함수 & 함수형 프로그래밍'
+      body: 150∼154강
+    - day: 4
+      issue_title: 'Day 27: 동시성 문제와 해결'
+      body: 181∼182강
+    - day: 5
+      issue_title: 'Day 26: GCD 개념 및 async/await 비교'
+      body: 173∼180강
+- number: 7
+  title: Week T – 테스트 마일스톤 1
+  description: 테스트 마일스톤입니다. 체크리스트/진행률 자동화를 검증합니다.
+  due: '2025-05-31'
+  days:
+    - day: 1
+      issue_title: '[TEST] Day T2: 체크리스트 처리 확인'
+      body: 이건 체크 후 README 반영 확인용 이슈입니다.
+    - day: 2
+      issue_title: '[TEST] Day T1: 테스트 이슈입니다'
+      body: 이건 테스트용 이슈입니다. 마일스톤과 바디 업데이트를 함께 검증합니다!
+- number: 8
+  title: Week T - 테스트 마일스톤 2
+  description: 테스트 마일스톤입니다. 체크리스트/진행률 자동화를 검증합니다.
+  due: '2025-06-07'
+- number: 9
+  title: Week T - 테스트 마일스톤 3
+  description: 테스트 마일스톤입니다. 체크리스트/진행률 자동화를 검증합니다.
+  due: '2025-06-14'

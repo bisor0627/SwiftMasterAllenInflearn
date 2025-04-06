@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "name": "swiftmasteralleninflearn",
+  "version": "1.0.0",
+  "description": "> UIKit 기반 iOS 앱 개발 강의 (by Allen) 실습 & 정리 레포지토리 🎯",
+  "main": "index.js",
+  "dependencies": {
+    "argparse": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bisor0627/SwiftMasterAllenInflearn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bisor0627/SwiftMasterAllenInflearn/issues"
+  },
+  "homepage": "https://github.com/bisor0627/SwiftMasterAllenInflearn#readme"
+}

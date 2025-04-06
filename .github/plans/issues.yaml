@@ -1,119 +1,196 @@
-- title: "Day 01: MyFirstApp, DiceGameApp 시작"
-  body: "65∼69강 + 함수 기초 (28∼29강)"
-  milestone: Week 1 – 앱 실습 & Swift 기초
-
-- title: "Day 02: 조건문/switch, UpDown CLI 앱"
-  body: "15∼17강, 77∼78강"
-  milestone: Week 1 – 앱 실습 & Swift 기초
-
-- title: "Day 03: UpDownApp 시작"
-  body: "79∼80강, 반복문 복습 (23∼26강)"
-  milestone: Week 1 – 앱 실습 & Swift 기초
-
-- title: "Day 04: UpDownApp 논리 구성, guard문"
-  body: "81∼83강, 39강"
-  milestone: Week 1 – 앱 실습 & Swift 기초
-
-- title: "Day 05: 튜플/삼항연산자/옵셔널 기본"
-  body: "19∼22강, 43강"
-  milestone: Week 1 – 앱 실습 & Swift 기초
-
-- title: "Day 06: ARC 개념, 클래스/구조체 기초"
-  body: "155∼156강, 85∼86강"
-  milestone: Week 2 – ARC & 클로저 정복
-
-- title: "Day 07: ARC 심화 + 메모리 구조"
-  body: "157∼162강, 106강"
-  milestone: Week 2 – ARC & 클로저 정복
-
-- title: "Day 08: 함수의 메모리 구조 & inout"
-  body: "35∼38강"
-  milestone: Week 2 – ARC & 클로저 정복
-
-- title: "Day 09: 클로저 개념/형태/문법"
-  body: "142∼146강"
-  milestone: Week 2 – ARC & 클로저 정복
-
-- title: "Day 10: 클로저의 메모리 구조, escaping"
-  body: "147∼149강"
-  milestone: Week 2 – ARC & 클로저 정복
-
-- title: "Day 11: 열거형 + 옵셔널 패턴 정리"
-  body: "53∼59강"
+- number: 33
+  title: '[TEST] Day T2: 체크리스트 처리 확인'
+  body: 이건 체크 후 README 반영 확인용 이슈입니다.
+  milestone: Week T – 테스트 마일스톤
+  labels: []
+- number: 32
+  title: '[TEST] Day T1: 테스트 이슈입니다'
+  body: 이건 테스트용 이슈입니다. 마일스톤과 바디 업데이트를 함께 검증합니다!
+  milestone: Week T – 테스트 마일스톤
+  labels:
+    - bug
+- number: 31
+  title: 'Day 12: 앱 리팩토링 및 정리'
+  body: Dice, UpDown
   milestone: Week 3 – 앱 리팩토링 & CS 복습
-
-- title: "Day 12: 앱 리팩토링 및 정리"
-  body: "Dice, UpDown"
+  labels: []
+- number: 30
+  title: 'Day 30: 전체 회고 + README 정리'
+  body: ''
+  milestone: Week 6 – 동시성 & 포트폴리오
+  labels:
+    - task
+- number: 29
+  title: 'Day 29: 고급 연산자 & 메모리 안전'
+  body: 207∼213강
+  milestone: Week 6 – 동시성 & 포트폴리오
+  labels:
+    - task
+- number: 28
+  title: 'Day 28: 고차함수 & 함수형 프로그래밍'
+  body: 150∼154강
+  milestone: Week 6 – 동시성 & 포트폴리오
+  labels:
+    - task
+- number: 27
+  title: 'Day 27: 동시성 문제와 해결'
+  body: 181∼182강
+  milestone: Week 6 – 동시성 & 포트폴리오
+  labels:
+    - task
+- number: 26
+  title: 'Day 26: GCD 개념 및 async/await 비교'
+  body: 173∼180강
+  milestone: Week 6 – 동시성 & 포트폴리오
+  labels:
+    - task
+- number: 25
+  title: 'Day 25: 제네릭 개념 + 프로토콜 확장'
+  body: 183∼185강
+  milestone: Week 5 – 제네릭 & 프로토콜
+  labels:
+    - task
+- number: 24
+  title: 'Day 24: 메서드 디스패치'
+  body: 136∼137강
+  milestone: Week 5 – 제네릭 & 프로토콜
+  labels:
+    - task
+- number: 23
+  title: 'Day 23: 프로토콜 & 프로토콜지향 프로그래밍'
+  body: 125∼135강
+  milestone: Week 5 – 제네릭 & 프로토콜
+  labels:
+    - task
+- number: 22
+  title: 'Day 22: 확장/중첩타입/Self'
+  body: 119∼124강, 138∼141강
+  milestone: Week 5 – 제네릭 & 프로토콜
+  labels:
+    - task
+- number: 21
+  title: 'Day 21: 타입캐스팅'
+  body: 115∼118강
+  milestone: Week 5 – 제네릭 & 프로토콜
+  labels:
+    - task
+- number: 20
+  title: 'Day 20: Result 타입, 에러처리'
+  body: 186∼187강, 163∼166강
+  milestone: Week 4 – 클래스 & 네트워킹
+  labels:
+    - task
+- number: 19
+  title: 'Day 19: 네트워킹 구조 이해 및 실습'
+  body: 167∼172강
+  milestone: Week 4 – 클래스 & 네트워킹
+  labels:
+    - task
+- number: 18
+  title: 'Day 18: 클래스 상속 및 초기화 흐름'
+  body: 104∼114강
+  milestone: Week 4 – 클래스 & 네트워킹
+  labels:
+    - task
+- number: 17
+  title: 'Day 17: 타입 메서드, 서브스크립트, 싱글톤'
+  body: 99∼103강
+  milestone: Week 4 – 클래스 & 네트워킹
+  labels:
+    - task
+- number: 16
+  title: 'Day 16: 속성과 메서드'
+  body: 90∼98강
+  milestone: Week 4 – 클래스 & 네트워킹
+  labels:
+    - task
+- number: 15
+  title: 'Day 15: 전체 복습 + 궁금한 점 정리'
+  body: ''
   milestone: Week 3 – 앱 리팩토링 & CS 복습
-
-- title: "Day 13: CS101 스킵 훑기, 문자열 기본"
-  body: "1∼4강, 195∼198강"
+  labels:
+    - task
+- number: 14
+  title: 'Day 14: 문자열 인덱싱/삽입/정규식'
+  body: 199∼205강
   milestone: Week 3 – 앱 리팩토링 & CS 복습
-
-- title: "Day 14: 문자열 인덱싱/삽입/정규식"
-  body: "199∼205강"
+  labels:
+    - task
+- number: 13
+  title: 'Day 13: CS101 스킵 훑기, 문자열 기본'
+  body: 1∼4강, 195∼198강
   milestone: Week 3 – 앱 리팩토링 & CS 복습
-
-- title: "Day 15: 전체 복습 + 궁금한 점 정리"
-  body: ""
+  labels:
+    - task
+- number: 12
+  title: 'Day 12: 앱 리팩토링 및 정리 (Dice, UpDown)'
+  body: 리팩토링
   milestone: Week 3 – 앱 리팩토링 & CS 복습
-
-- title: "Day 16: 속성과 메서드"
-  body: "90∼98강"
-  milestone: Week 4 – 클래스 & 네트워킹
-
-- title: "Day 17: 타입 메서드, 서브스크립트, 싱글톤"
-  body: "99∼103강"
-  milestone: Week 4 – 클래스 & 네트워킹
-
-- title: "Day 18: 클래스 상속 및 초기화 흐름"
-  body: "104∼114강"
-  milestone: Week 4 – 클래스 & 네트워킹
-
-- title: "Day 19: 네트워킹 구조 이해 및 실습"
-  body: "167∼172강"
-  milestone: Week 4 – 클래스 & 네트워킹
-
-- title: "Day 20: Result 타입, 에러처리"
-  body: "186∼187강, 163∼166강"
-  milestone: Week 4 – 클래스 & 네트워킹
-
-- title: "Day 21: 타입캐스팅"
-  body: "115∼118강"
-  milestone: Week 5 – 제네릭 & 프로토콜
-
-- title: "Day 22: 확장/중첩타입/Self"
-  body: "119∼124강, 138∼141강"
-  milestone: Week 5 – 제네릭 & 프로토콜
-
-- title: "Day 23: 프로토콜 & 프로토콜지향 프로그래밍"
-  body: "125∼135강"
-  milestone: Week 5 – 제네릭 & 프로토콜
-
-- title: "Day 24: 메서드 디스패치"
-  body: "136∼137강"
-  milestone: Week 5 – 제네릭 & 프로토콜
-
-- title: "Day 25: 제네릭 개념 + 프로토콜 확장"
-  body: "183∼185강"
-  milestone: Week 5 – 제네릭 & 프로토콜
-
-- title: "Day 26: GCD 개념 및 async/await 비교"
-  body: "173∼180강"
-  milestone: Week 6 – 동시성 & 포트폴리오
-
-- title: "Day 27: 동시성 문제와 해결"
-  body: "181∼182강"
-  milestone: Week 6 – 동시성 & 포트폴리오
-
-- title: "Day 28: 고차함수 & 함수형 프로그래밍"
-  body: "150∼154강"
-  milestone: Week 6 – 동시성 & 포트폴리오
-
-- title: "Day 29: 고급 연산자 & 메모리 안전"
-  body: "207∼213강"
-  milestone: Week 6 – 동시성 & 포트폴리오
-
-- title: "Day 30: 전체 회고 + README 정리"
-  body: ""
-  milestone: Week 6 – 동시성 & 포트폴리오
+  labels:
+    - task
+- number: 11
+  title: 'Day 11: 열거형 + 옵셔널 패턴 정리'
+  body: 53∼59강
+  milestone: Week 3 – 앱 리팩토링 & CS 복습
+  labels:
+    - task
+- number: 10
+  title: 'Day 10: 클로저의 메모리 구조, escaping'
+  body: 147∼149강
+  milestone: Week 2 – ARC & 클로저 정복
+  labels:
+    - task
+- number: 9
+  title: 'Day 09: 클로저 개념/형태/문법'
+  body: 142∼146강
+  milestone: Week 2 – ARC & 클로저 정복
+  labels:
+    - task
+- number: 8
+  title: 'Day 08: 함수의 메모리 구조 & inout'
+  body: 35∼38강
+  milestone: Week 2 – ARC & 클로저 정복
+  labels:
+    - task
+- number: 7
+  title: 'Day 07: ARC 심화 + 메모리 구조'
+  body: 157∼162강, 106강
+  milestone: Week 2 – ARC & 클로저 정복
+  labels:
+    - task
+- number: 6
+  title: 'Day 06: ARC 개념, 클래스/구조체 기초'
+  body: 155∼156강, 85∼86강
+  milestone: Week 2 – ARC & 클로저 정복
+  labels:
+    - task
+- number: 5
+  title: 'Day 05: 튜플/삼항연산자/옵셔널 기본'
+  body: 19∼22강, 43강
+  milestone: Week 1 – 앱 실습 & Swift 기초
+  labels:
+    - task
+- number: 4
+  title: 'Day 04: UpDownApp 논리 구성, guard문'
+  body: 81∼83강, 39강
+  milestone: Week 1 – 앱 실습 & Swift 기초
+  labels:
+    - task
+- number: 3
+  title: 'Day 03: UpDownApp 시작'
+  body: 79∼80강, 반복문 복습 (23∼26강)
+  milestone: Week 1 – 앱 실습 & Swift 기초
+  labels:
+    - task
+- number: 2
+  title: 'Day 02: 조건문/switch, UpDown CLI 앱'
+  body: 15∼17강, 77∼78강
+  milestone: Week 1 – 앱 실습 & Swift 기초
+  labels:
+    - task
+- number: 1
+  title: 'Day 01: MyFirstApp, DiceGameApp 시작'
+  body: 65∼69강 + 함수 기초 (28∼29강)
+  milestone: Week 1 – 앱 실습 & Swift 기초
+  labels:
+    - task

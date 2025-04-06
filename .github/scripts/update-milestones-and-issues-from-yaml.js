@@ -4,70 +4,107 @@ const path = require("path");
 const yaml = require("js-yaml");
 const { execSync } = require("child_process");
 
-const issuesYaml = path.resolve(".github/plans/issues.yaml");
-const milestonesYaml = path.resolve(".github/plans/milestones.yaml");
+const issuesYamlPath = path.resolve(".github/plans/issues.yaml");
+const milestonesYamlPath = path.resolve(".github/plans/milestones.yaml");
 
-const issues = yaml.load(fs.readFileSync(issuesYaml, "utf-8"));
-const milestones = yaml.load(fs.readFileSync(milestonesYaml, "utf-8"));
+const issuesYaml = yaml.load(fs.readFileSync(issuesYamlPath, "utf-8"));
+const milestonesYaml = yaml.load(fs.readFileSync(milestonesYamlPath, "utf-8"));
 
-// 현재 연결된 GitHub 저장소 정보 가져오기
-const repoInfo = JSON.parse(execSync("gh repo view --json owner,name", { encoding: "utf-8" }));
-const owner = repoInfo.owner.login;
-const repo = repoInfo.name;
+// ===== 업데이트할 이슈 데이터 준비 =====
+// const allIssues = JSON.parse(
+//   execSync("gh issue list --state all --json number,title", { encoding: "utf-8" })
+// );
+// const titleToNumber = Object.fromEntries(allIssues.map((i) => [i.title, i.number]));
+// const numberToTitle = Object.fromEntries(allIssues.map((i) => [i.number, i.title]));
 
-// GitHub에 존재하는 이슈 목록
-const existingIssues = JSON.parse(
-  execSync(`gh issue list --state all --json number,title`, { encoding: "utf-8" })
-);
-const titleToNumberMap = Object.fromEntries(
-  existingIssues.map((issue) => [issue.title, issue.number])
-);
+// issuesYaml.forEach((yamlIssue) => {
+//   const { number, title, body } = yamlIssue;
+//   let issueNumber = number;
 
-// 📌 이슈 업데이트
-issues.forEach(({ title, body }) => {
-  const number = titleToNumberMap[title];
-  if (!number) {
-    console.warn(`⚠️ 해당 이슈 없음: ${title}`);
-    return;
-  }
+//   if (!issueNumber && titleToNumber[title]) {
+//     issueNumber = titleToNumber[title];
+//   }
 
-  try {
-    console.log(`✏️ 이슈 #${number} 내용 업데이트: ${title}`);
-    execSync(`gh issue edit ${number} --body \"${body}\"`, { stdio: "inherit" });
-  } catch (err) {
-    console.error(`❌ 이슈 수정 실패: #${number}`, err.message);
-  }
-});
+//   if (!issueNumber) {
+//     console.warn(`⚠️ 해당 이슈 없음 (title/number 모두 매칭 불가): ${title}`);
+//     return;
+//   }
 
-// GitHub에 존재하는 마일스톤 목록
+//   let current;
+//   try {
+//     current = JSON.parse(
+//       execSync(`gh issue view ${issueNumber} --json title,body`, { encoding: "utf-8" })
+//     );
+//   } catch (err) {
+//     console.error(`❌ 이슈 조회 실패 (#${issueNumber}):`, err.message);
+//     return;
+//   }
+
+//   const needsTitleUpdate = current.title !== title;
+//   const needsBodyUpdate = current.body?.trim() !== (body ?? "").trim();
+
+//   if (!needsTitleUpdate && !needsBodyUpdate) {
+//     console.log(`⏩ 변경 없음: #${issueNumber} (${title})`);
+//     return;
+//   }
+
+//   const args = [`gh issue edit ${issueNumber}`];
+//   if (needsTitleUpdate) args.push(`--title \"${title}\"`);
+//   if (needsBodyUpdate) args.push(`--body \"${body}\"`);
+
+//   try {
+//     console.log(`✏️ 업데이트: #${issueNumber} → ${needsTitleUpdate ? "📝 제목" : ""} ${needsBodyUpdate ? "📄 본문" : ""}`);
+//     execSync(args.join(" "), { stdio: "inherit" });
+//   } catch (err) {
+//     console.error(`❌ 업데이트 실패 (#${issueNumber})`, err.message);
+//   }
+// });
+// ===== 마일스톤 업데이트 =====
 const existingMilestones = JSON.parse(
-  execSync(`gh api repos/${owner}/${repo}/milestones`, { encoding: "utf-8" })
-);
-const titleToMilestoneIdMap = Object.fromEntries(
-  existingMilestones.map((ms) => [ms.title, ms.number])
+  execSync("gh api repos/:owner/:repo/milestones --jq '.' --paginate", { encoding: "utf-8" })
 );
 
-// 📌 마일스톤 업데이트
-milestones.forEach(({ title, description, due }) => {
-  const milestoneId = titleToMilestoneIdMap[title];
-  if (!milestoneId) {
-    console.warn(`⚠️ 해당 마일스톤 없음: ${title}`);
+const titleToMilestone = Object.fromEntries(
+  existingMilestones.map((m) => [m.title, m])
+);
+const numberToMilestone = Object.fromEntries(
+  existingMilestones.map((m) => [m.number, m])
+);
+milestonesYaml.forEach(({ number, title, description, due }) => {
+  let milestone = number ? numberToMilestone[number] : titleToMilestone[title];
+
+  if (!milestone) {
+    console.warn(`⚠️ 해당 마일스톤 없음 (title/number 모두 매칭 불가): ${title || number}`);
     return;
   }
 
+  const needsTitleUpdate = milestone.title !== title;
+  const needsDescriptionUpdate = milestone.description?.trim() !== (description ?? "").trim();
+  const needsDueUpdate = milestone.due_on?.slice(0, 10) !== due;
+
+  if (!needsTitleUpdate && !needsDescriptionUpdate && !needsDueUpdate) {
+    console.log(`⏩ 변경 없음: 마일스톤 '${milestone.title}'`);
+    return;
+  }
+
+  const args = [
+    `gh api --method PATCH repos/:owner/:repo/milestones/${milestone.number}`
+  ];
+  if (needsTitleUpdate) args.push(`-f title='${title}'`);
+  if (needsDescriptionUpdate) args.push(`-f description='${description}'`);
+  if (needsDueUpdate) args.push(`-f due_on='${due}T23:59:59Z'`);
+
   try {
-    console.log(`✏️ 마일스톤 #${milestoneId} 내용 업데이트: ${title}`);
-    execSync(
-      `gh api -X PATCH repos/${owner}/${repo}/milestones/${milestoneNumber} \
-      --silent \
-      -f title="${title}" \
-      -f description="${description}" \
-      -f due_on="${due_on}T23:59:59Z"`,
-      { stdio: "inherit" }
-    );
+    console.log(`✏️ 마일스톤 업데이트: #${milestone.number} → ${[
+      needsTitleUpdate ? "📝 제목" : "",
+      needsDescriptionUpdate ? "📄 설명" : "",
+      needsDueUpdate ? "⏰ 마감일" : ""
+    ].filter(Boolean).join(" / ")}`);
+    execSync(args.join(" "), {
+      stdio: "inherit",
+      env: { ...process.env, EDITOR: "true" }
+    });
   } catch (err) {
-    console.error(`❌ 마일스톤 수정 실패: #${milestoneId}`, err.message);
+    console.error(`❌ 마일스톤 업데이트 실패 (${title})`, err.message);
   }
 });
-
-console.log("✅ 이슈 및 마일스톤 동기화 완료");
