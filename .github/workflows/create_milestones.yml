@@ -1,0 +1,56 @@
+name: Create GitHub Milestones
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-milestones:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create milestones via GitHub CLI
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.MY_GH_TOKEN }}
+          script: |
+            const milestones = [
+              {
+                title: "Week 1 – 앱 실습 & Swift 기초",
+                description: "Day 01~05: DiceGame, UpDownApp, 함수/조건문/옵셔널",
+                due_on: "2025-04-11T23:59:59Z"
+              },
+              {
+                title: "Week 2 – ARC & 클로저 정복",
+                description: "Day 06~10: ARC, 메모리 구조, 클로저",
+                due_on: "2025-04-18T23:59:59Z"
+              },
+              {
+                title: "Week 3 – 앱 리팩토링 & CS 복습",
+                description: "Day 11~15: 앱 정리, 문자열, CS101",
+                due_on: "2025-04-25T23:59:59Z"
+              },
+              {
+                title: "Week 4 – 클래스 & 네트워킹",
+                description: "Day 16~20: 클래스 상속/속성, 네트워크",
+                due_on: "2025-05-02T23:59:59Z"
+              },
+              {
+                title: "Week 5 – 제네릭 & 프로토콜",
+                description: "Day 21~25: 타입캐스팅, 확장, 제네릭, 프로토콜",
+                due_on: "2025-05-09T23:59:59Z"
+              },
+              {
+                title: "Week 6 – 동시성 & 포트폴리오",
+                description: "Day 26~30: 동시성, 함수형, 회고 정리",
+                due_on: "2025-05-16T23:59:59Z"
+              }
+            ];
+
+            for (const m of milestones) {
+              await github.rest.issues.createMilestone({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: m.title,
+                description: m.description,
+                due_on: m.due_on
+              });
+            }
